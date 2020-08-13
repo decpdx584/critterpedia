@@ -58,7 +58,8 @@ module.exports = (sequelize, DataTypes) => {
     return correctPassword;
   }
 
-  user.prototype.toJson = function() {
+  // remove the password before it gets serialized (answer when used)
+  user.prototype.toJSON = function() {
     let userData = this.get();
     delete userData.password;
     return userData;
