@@ -29,7 +29,7 @@ router.post('/signup', (req, res) => {
         successFlash: 'Account created! Logging in...'
       })(req, res);
       // Before passport.authenticate
-      res.redirect('/');
+      // res.redirect('/');
     } else {
       // email already exists
       console.log('Email already exists');
