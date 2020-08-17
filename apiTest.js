@@ -3,9 +3,9 @@ const app = express();
 const axios = require('axios');
 
 // app.get('/', (req,res) => {
-app.get('https://acnhapi.com/v1/bugs')
+axios.get('https://acnhapi.com/v1/sea')
     .then(response => {
-        console.log(response.data.get());
+        console.log(response.data);
 });
 // });
 
