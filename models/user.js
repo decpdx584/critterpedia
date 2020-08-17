@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.user.belongsToMany(models.critter, { through: 'belongTos', onDelete: 'CASCADE'});
     }
   };
   user.init({
