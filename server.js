@@ -53,6 +53,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./routes/auth'));
+app.use('/inventory', require('./routes/inventory'));
 
 
 const port = process.env.PORT || 3000;
