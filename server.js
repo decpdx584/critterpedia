@@ -44,6 +44,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   console.log(req.flash());
   res.render('index', { alerts: res.locals.alerts });
+    // ,
+    //                     navbar: res.locals.navbar 
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {
