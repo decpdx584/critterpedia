@@ -44,12 +44,10 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   console.log(req.flash());
   res.render('index', { alerts: res.locals.alerts });
-    // ,
-    //                     navbar: res.locals.navbar 
 });
 
-app.get('/profile', isLoggedIn, (req, res) => {
-  res.render('profile');
+app.get('/inventory', isLoggedIn, (req, res) => {
+  res.render('inventory');
 });
 
 app.use('/auth', require('./routes/auth'));
