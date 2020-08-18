@@ -6,3 +6,14 @@ As part of our classwork on the Friday before project week we were instructed to
 * Plan out and begin this readme ✅
 * Create models needed for the project✅
 * Create and use apiTest.js to write test calls for my chosen [API](https://acnhapi.com/v1/) ✅
+
+## Materialize
+Adding Materialize to my project was important to do early in development because it effects the syntax of all the I add to each view. While normally easy to implement, getting the navbar up top to be fully page-size responsive turned out to be a bit of a pain. This irritation was finally resolved when I was reminded to add a particular script to the bottom of my layout.ejs body:
+```html
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+    });
+</script>  
+```

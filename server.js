@@ -51,6 +51,7 @@ app.get('/inventory', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./routes/auth'));
+app.use('/search', require('./routes/search'));
 app.use('/inventory', require('./routes/inventory'));
 
 
