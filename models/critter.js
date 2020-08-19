@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.user.belongsToMany(models.critter, { through: 'belongTos', onDelete: 'CASCADE'});
+      models.critter.belongsToMany(models.user, { through: 'belongTos', onDelete: 'CASCADE'});
     }
   };
   critter.init({
-    name: DataTypes.STRING,
-    apiId: DataTypes.INTEGER
+    type: DataTypes.STRING,
+    name: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'critter',

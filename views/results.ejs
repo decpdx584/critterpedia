@@ -1,18 +1,3 @@
 <h1>Search Results</h1>
 
-<% if (data) { %> 
-    <% data.forEach(f => { %>
-        <div>
-            <a href="/fish/<%= f.Name %>"><%= f.Name %></a>
-            <h2><%= f.Catch-phrase %></h2>
-            <img src="<%= f.Image_uri %>" alt="<%= f.Name %>">
-            <form method="POST" action="/inventory">
-                <input type="hidden" name="name" value="<%= f.Name %>">
-                <input type="hidden" name="fishid" value="<%= f.Id %>">
-                <button type="submit">Add to inventory</button>
-            </form>
-        </div>
-    <% }); %> 
-<% } else { %> 
-    <div>No fish found... Sorry.</div>
-<% } %> 
+    

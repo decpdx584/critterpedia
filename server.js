@@ -46,6 +46,7 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: res.locals.alerts });
 });
 
+// may cause issues for line 56
 app.get('/inventory', isLoggedIn, (req, res) => {
   res.render('inventory');
 });
