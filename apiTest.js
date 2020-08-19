@@ -43,40 +43,41 @@ const db = require('./models');
 
 // SEED SEA CREATURES
 
-axios.get('https://acnhapi.com/v1a/sea')
-.then(response => {
-    let sea = response.data
-    sea.forEach(s => {
-        db.critter.findOrCreate({
-            where: {
-                type: 'sea',
-                name: s['file-name']
-            }
-        }).catch(err => {
-            console.log('Error', err)
-        });
-    });
-}).catch(err => {
-    console.log('Error', err)
-});
-
-    
-app.listen(3000);
-
-
-// axios.get('https://acnhapi.com/v1a/fish')
-//     .then(response => {
-//         let fish = response.data;
+// axios.get('https://acnhapi.com/v1a/sea')
+// .then(response => {
+//     let sea = response.data
+//     sea.forEach(s => {
 //         db.critter.findOrCreate({
 //             where: {
-//                 type: 'fish',
-//                 apiId: fish.Id
+//                 type: 'sea',
+//                 name: s['file-name']
 //             }
+//         }).catch(err => {
+//             console.log('Error', err)
 //         });
+//     });
+// }).catch(err => {
+//     console.log('Error', err)
 // });
+
+    
+
+
+axios.get('https://acnhapi.com/v1a/bugs')
+    .then(response => {
+            let bugs = response.data;
+            console.log(bugs)
+            // db.critter.findOrCreate({
+            //         where: {
+            //                 type: 'fish',
+            //                 apiId: fish.Id
+            //             }
+            //         });
+});
 
 
 //     .then(([response, found]) => {
 //         console.log(found);
-        
+
 // })
+app.listen(3000);

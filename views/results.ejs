@@ -1,7 +1,12 @@
 <h1>Search Results</h1>
 
     <% if (results) { %>
-        <% let val = Object.values(results); %>
-        <h3><%= val[1] %></h3>
-        <img src="<%= val[9] %>" alt="<%= Object.values(results)[1] %>">
+        <img src="<%= results.image_uri %>" alt="<%= results['file-name'] %>">
+        <% let newName = results['file-name'] %>
+        <h3><%= results['file-name'] %></h3>
+        <h4><%= results.price%> bells</h4>
+        <h4><%= results['catch-phrase'] %></h4>
+
     <% }; %>
+
+    <!-- .replace(/_/g, " ") -->
