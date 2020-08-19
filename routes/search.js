@@ -7,16 +7,18 @@ const axios = require('axios');
 // render search results
 router.get('/', (req, res) => {
     let search = req.query.q;
-    console.log('😎', search)
-    axios.get(`https://acnhapi.com/v1/fish/${search}`)
-      .then((response) => {
-        console.log('line13', response)
-        let fish = response.data;
-        console.log(fish);
-        res.render('results');
+    db.critter.findOne({
+      where: { name: search }})
+      .then(critter1 => {
+        axios.get(`https://acnhapi.com/v1a/${critter1.type}/${search}`)
+        .then((response) => {
+          let results = response.data;
+          res.render('results', { results });
+        })
+        .catch(err => {
+          console.log('Error', err);
+        })
       })
-      .catch(err => {
-        console.log('Error', err);
-      })
+
 });
 module.exports = router;
