@@ -6,18 +6,21 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %></span>
-          <p><a class="waves-effect waves-light btn"><i class="material-icons right" id="add">check_circle</i>Add to Inventory</a></p>
+          <form method="POST" action="/inventory">
+            <input type="hidden" class="addCritter" name="id" value="<%= results.id%>">
+            <button><a hidden type="submit" class="waves-effect waves-light btn"><i class="material-icons right" id="add">check_circle</i>Add to Inventory</a></button>
+        </form>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %><i class="material-icons right">close</i></span>
-          <h5><%= results.price%> bells</h5>
+          <h5>Habitat: <%= results.availability.location %></h5>
+          <h5>Rarity: <%= results.availability.rarity %></h5>
+          <h5>The Nooks will pay you <%= results.price%> bells for one</h5>
           <h5>When you caught it you said,<br>"<%= results['catch-phrase'] %>"</h5>
           <h5>When you donate it to the museum, Blathers says:<br>"<%= results['museum-phrase'] %>"</h5>
         </div>
       </div>
+      <p>click picture for more info</p>
 
 
-    <form method="POST" action="/inventory">
-        <input type="hidden" class="addCritter" name="id" value="<%= results.id%>">
-        <button type="submit">Add</button>
-    </form>
+    
