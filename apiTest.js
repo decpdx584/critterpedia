@@ -63,17 +63,17 @@ const db = require('./models');
     
 
 
-axios.get('https://acnhapi.com/v1a/bugs')
-    .then(response => {
-            let bugs = response.data;
-            console.log(bugs)
-            // db.critter.findOrCreate({
-            //         where: {
-            //                 type: 'fish',
-            //                 apiId: fish.Id
-            //             }
-            //         });
-});
+// axios.get('https://acnhapi.com/v1a/bugs')
+//     .then(response => {
+//             let bugs = response.data;
+//             console.log(bugs)
+//             // db.critter.findOrCreate({
+//             //         where: {
+//             //                 type: 'fish',
+//             //                 apiId: fish.Id
+//             //             }
+//             //         });
+// });
 
 
 //     .then(([response, found]) => {

@@ -12,11 +12,12 @@
           <span class="card-title grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %><i class="material-icons right">close</i></span>
           <h5><%= results.price%> bells</h5>
           <h5>When you caught it you said,<br>"<%= results['catch-phrase'] %>"</h5>
-          <h5>When you donate it, Blathers says:<br>"<%= results['museum-phrase'] %>"</h5>
+          <h5>When you donate it to the museum, Blathers says:<br>"<%= results['museum-phrase'] %>"</h5>
         </div>
       </div>
 
 
     <form method="POST" action="/inventory">
         <input type="hidden" class="addCritter" name="id" value="<%= results.id%>">
+        <button type="submit">Add</button>
     </form>

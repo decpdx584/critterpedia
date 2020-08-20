@@ -42,6 +42,21 @@ app.use((req, res, next) => {
   next();
 });
 
+// add critter to inventory
+app.post('/inventory', isLoggedIn, (req, res) => {
+  console.log('🧩You hit the button!', req.body)
+  console.log(req.user)
+      db.belongTos.create({
+          userId: req.user.dataValues.id,
+          critterId: req.body.id
+      }).then((response) => {
+        console.log('🏵', response)
+      })
+      .catch(error => {
+      console.log('Error', error);
+    })
+});
+
 app.get('/', (req, res) => {
   console.log(req.flash());
   res.render('index', { alerts: res.locals.alerts });
@@ -57,28 +72,7 @@ app.get('/inventory', isLoggedIn, (req, res) => {
   res.render('inventory');
 });
 
-// add critter to inventory
-app.post('/', (req, res) => {
-  db.user.findOne({
-      where: {
-        id: req.user.dataValues.id
-      }
-  }).then(user => {
-    db.critter.findOne({
-      where: {
-        id: req.body.id
-      }
-    }).then(critter =>{
-      user.addCritter(critter).then(relation => {
-        console.log(critter.name, 'added to', user.name)
-      })
-    }).catch(error => {
-      console.log('Error', error);
-    })
-  }).catch(error => {
-    console.log('Error', error);
-  })
-});
+
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
