@@ -6,7 +6,7 @@ const axios = require('axios');
 
 // render search results
 router.get('/', (req, res) => {
-    let search = req.query.q;
+    let search = req.query.q.replace(/ /g, "_");
     db.critter.findOne({
       where: { name: search }})
       .then(critter1 => {
@@ -19,6 +19,21 @@ router.get('/', (req, res) => {
           console.log('Error', err);
         })
       })
-
 });
+
+// render all fish from dropdown
+
+
+
+
+// render all bugs from dropdown
+
+
+
+
+// render all sea creatures from dropdown
+
+
+
+
 module.exports = router;
