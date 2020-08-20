@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
+const axios = require('axios');
 
 // SEED FISH
-router.get('/se/ed/fi/sh', (req,res) => {
+router.get('/ed/fi/sh', (req,res) => {
     axios.get('https://acnhapi.com/v1a/fish')
     .then(response => {
         let fish = response.data
@@ -24,7 +25,7 @@ router.get('/se/ed/fi/sh', (req,res) => {
   
   
 // SEED BUGS
-router.get('/se/ed/bu/gs', (req,res) => {
+router.get('/ed/bu/gs', (req,res) => {
     axios.get('https://acnhapi.com/v1a/bugs')
     .then(response => {
         let bugs = response.data
@@ -45,7 +46,7 @@ router.get('/se/ed/bu/gs', (req,res) => {
   
   
 // SEED SEA CREATURES
-router.get('/se/ed/se/cr', (req,res) => {
+router.get('/ed/se/cr', (req,res) => {
     axios.get('https://acnhapi.com/v1a/sea')
     .then(response => {
         let sea = response.data

@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         axios.get(`https://acnhapi.com/v1a/${critter1.type}/${search}`)
         .then((response) => {
           let results = response.data;
-          res.render('results', { results });
+          res.render('results', { results, critter1 });
         })
         .catch(err => {
           console.log('Error', err);

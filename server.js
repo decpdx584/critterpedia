@@ -66,12 +66,9 @@ app.get('/', (req, res) => {
 app.use('/auth', require('./routes/auth'));
 app.use('/search', require('./routes/search'));
 app.use('/se', require('./routes/seed'));
+app.use('/inventory', isLoggedIn, require('./routes/inventory'));
 
-// render inventory
-app.get('/inventory', isLoggedIn, (req, res) => {
-  // console.log('🎯', req.user.dataValues.id)
-  res.render('inventory');
-});
+
 
 
 

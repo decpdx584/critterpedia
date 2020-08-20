@@ -1,3 +1,14 @@
 <h2>Inventory Page</h2>
 
-<h3>Welcome to your Inventory</h3>
+<h3>Welcome to your inventory, <%= user.name %></h3>
+
+<% if (user) { %>
+    <% critters.forEach(critter => { %>
+        <% belongTos.forEach(belongto => { %>
+            <% if (belongto.critterId === critter.id) { %>
+                <h3> <%= critter.name %> </h3>
+                <h3> <%= belongto.nickname %> </h3>
+            <% } %>
+        <% }) %>
+    <% }); %>
+<% }; %>
