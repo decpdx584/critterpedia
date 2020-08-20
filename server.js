@@ -46,14 +46,10 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: res.locals.alerts });
 });
 
-// may cause issues for line 56
-app.get('/inventory', isLoggedIn, (req, res) => {
-  res.render('inventory');
-});
 
 app.use('/auth', require('./routes/auth'));
 app.use('/search', require('./routes/search'));
-app.use('/inventory', require('./routes/inventory'));
+app.use('/inventory', isLoggedIn, require('./routes/inventory'));
 
 
 const port = process.env.PORT || 3000;

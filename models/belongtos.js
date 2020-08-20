@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   belongTos.init({
     userId: DataTypes.INTEGER,
-    critterId: DataTypes.INTEGER
+    critterId: DataTypes.INTEGER,
+    nickname: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'belongTos',

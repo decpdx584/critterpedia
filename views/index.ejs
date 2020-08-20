@@ -1,18 +1,10 @@
 
-<p>Found a new critter? Search it below...</p>
+<p>Find a new critter? Search it below to add it to your inventory...</p>
 <form method="GET" action="/search">
     <input type="text" name="q" id="q">
 </form>
 
 <p>... Or search by category...</p>
-  <!-- Dropdown Trigger -->
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Categories</a>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">Fish</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">Bugs</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">Sea Creatures</a></li>
-  </ul>
+<a class="waves-effect waves-light btn-large" id="fish">Fish</a>
+<a class="waves-effect waves-light btn-large" id="bugs">Bugs</a>
+<a class="waves-effect waves-light btn-large" id="sea">Sea Creatures</a>
