@@ -45,5 +45,7 @@ router.get('/', (req, res) => {
     })
 });
 
+// add nickname to inventory critter
+
 
 module.exports = router;
