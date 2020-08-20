@@ -13,6 +13,6 @@
     "database": "critterpedia_production",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "use_env_variable": "postgres://surzehuzjqxukb:a31db20bdfe20eb8e2769294f6b9033d545f969c7cf0dd2b2a057304c9107e2e@ec2-52-22-94-132.compute-1.amazonaws.com:5432/d68rkjvjogpmjj"
+    "use_env_variable": "DATABASE_URL"
   }
 }
