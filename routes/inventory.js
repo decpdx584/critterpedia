@@ -3,11 +3,21 @@ const router = express.Router();
 const db = require('../models');
 const axios = require('axios');
 
-// render inventory
-// router.get('/', (req, res) => {
-//     // console.log('🎯', req.user.dataValues.id)
-//     res.render('inventory');
-// });
+// add critter to inventory
+router.post('/', (req, res) => {
+    // console.log('🧩You hit the button!', req.body)
+    // console.log(req.user)
+    db.belongTos.create({
+        userId: req.user.dataValues.id,
+        critterId: req.body.id
+    }).then((response) => {
+        console.log('🏵', response)
+    })
+    .catch(error => {
+    console.log('Error', error);
+    })
+    res.redirect('inventory')
+  });
 
 // render user's inventory
 router.get('/', (req, res) => {

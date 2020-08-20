@@ -42,21 +42,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// add critter to inventory
-app.post('/inventory', isLoggedIn, (req, res) => {
-  // console.log('🧩You hit the button!', req.body)
-  // console.log(req.user)
-      db.belongTos.create({
-          userId: req.user.dataValues.id,
-          critterId: req.body.id
-      }).then((response) => {
-        console.log('🏵', response)
-      })
-      .catch(error => {
-      console.log('Error', error);
-    })
-});
-
 app.get('/', (req, res) => {
   console.log(req.flash());
   res.render('index', { alerts: res.locals.alerts });
