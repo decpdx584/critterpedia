@@ -65,6 +65,7 @@ app.get('/', (req, res) => {
 // use controllers
 app.use('/auth', require('./routes/auth'));
 app.use('/search', require('./routes/search'));
+app.use('/se', require('./routes/seed'));
 
 // render inventory
 app.get('/inventory', isLoggedIn, (req, res) => {
