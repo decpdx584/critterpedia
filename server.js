@@ -6,6 +6,7 @@ const session = require('express-session');
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig')
 const flash = require('connect-flash');
+const db = require('./models')
 
 // require authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
@@ -52,17 +53,32 @@ app.use('/search', require('./routes/search'));
 
 // render inventory
 app.get('/inventory', isLoggedIn, (req, res) => {
+  // console.log('🎯', req.user.dataValues.id)
   res.render('inventory');
 });
 
 // add critter to inventory
-// app.post('/results', (req, res) => {
-//   db.belongTos.create({
-//       where: {
-//          userId: 
-//       }
-//   })
-// })
+app.post('/', (req, res) => {
+  db.user.findOne({
+      where: {
+        id: req.user.dataValues.id
+      }
+  }).then(user => {
+    db.critter.findOne({
+      where: {
+        id: req.body.id
+      }
+    }).then(critter =>{
+      user.addCritter(critter).then(relation => {
+        console.log(critter.name, 'added to', user.name)
+      })
+    }).catch(error => {
+      console.log('Error', error);
+    })
+  }).catch(error => {
+    console.log('Error', error);
+  })
+});
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
