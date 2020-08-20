@@ -1,12 +1,28 @@
 <h1>Search Results</h1>
 
-    <% if (results) { %>
-        <img src="<%= results.image_uri %>" alt="<%= results['file-name'] %>">
-        <% let newName = results['file-name'] %>
-        <h3><%= results['file-name'].replace(/_/g, " ") %></h3>
-        <h4><%= results.price%> bells</h4>
-        <h4><%= results['catch-phrase'] %></h4>
-        <h4><%= results['museum-phrase'] %></h4>
-    <% }; %>
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="<%= results.image_uri %>">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %></span>
+          <p><a class="waves-effect waves-light btn"><i class="material-icons right" id="add">check_circle</i>Add to Inventory</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %><i class="material-icons right">close</i></span>
+          <p><%= results.price%> bells</p>
+          <p><%= results['catch-phrase'] %></p>
+          <p><%= results['museum-phrase'] %></p>
+        </div>
+      </div>
 
-    <a class="waves-effect waves-light btn"><i class="material-icons right" id="add">check_circle</i>Add to Inventory</a>
+
+
+
+
+
+
+    <!-- <form method="POST" action="/inventory">
+        <input type="hidden" name="title" value="<%# t.Title%>">
+        <input type="hidden" name="imdbid" value="<%# t.imdbID%>">
+    </form> -->

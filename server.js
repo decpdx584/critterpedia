@@ -46,11 +46,23 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: res.locals.alerts });
 });
 
-
+// use controllers
 app.use('/auth', require('./routes/auth'));
 app.use('/search', require('./routes/search'));
-app.use('/inventory', isLoggedIn, require('./routes/inventory'));
 
+// render inventory
+app.get('/inventory', isLoggedIn, (req, res) => {
+  res.render('inventory');
+});
+
+// add critter to inventory
+// app.post('/results', (req, res) => {
+//   db.belongTos.create({
+//       where: {
+//          userId: 
+//       }
+//   })
+// })
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {

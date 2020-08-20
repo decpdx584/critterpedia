@@ -5,3 +5,8 @@ h1 {
 main {
   min-height: 90vh;
 }
+
+.card {
+  height: 50%;
+  width: 50%
+}

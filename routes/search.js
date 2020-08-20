@@ -19,6 +19,9 @@ router.get('/', (req, res) => {
           console.log('Error', err);
         })
       })
+      .catch(err => {
+        console.log('Error', err);
+      })
 });
 
 // render all fish from dropdown

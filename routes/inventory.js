@@ -6,18 +6,11 @@ const axios = require('axios');
 // require authorization middleware at the top of the page
 // const isLoggedIn = require('./middleware/isLoggedIn');
 
-// render user's inventory
-router.get('/inventory', (req, res) => {
-    console.log('Its your inventory!');
-});
+// // render user's inventory
+// router.get('/inventory', (req, res) => {
+//     console.log('Its your inventory!');
+// });
 
-// add critter to inventory
-// router.post('/results', (req, res) => {
-//     db.belongTos.create({
-//         where: {
-//            userId:  
-//         }
-//     })
-// })
+
 
 module.exports = router;
