@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
         critterId: req.body.id
         }
     }).then((response) => {
-        console.log('🏵', response)
+        // console.log('🏵', response)
         res.redirect('inventory')
     })
     .catch(error => {
@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
         }
     })
     .then(belongTos => {
-        console.log(belongTos[0]);
+        // console.log(belongTos[0]);
         db.user.findOne({
             where: {
                 id: req.user.id
@@ -48,13 +48,31 @@ router.get('/', (req, res) => {
 });
 
 // add nickname to inventory critter
+router.put('/:id', (req, res) => {
+    db.belongTos.findOne({
+        where: {
+            userId: req.user.id,
+            critterId: req.params.id
+        },
+        // include: {req.body.dub}
+    })
+    .then(crit => {
+        crit.nickname= req.body.nickname;
+        crit.save();
+        // console.log('🤡', req.body.nickname)
+        res.redirect('/inventory');
+    })
+    .catch(err => {
+        console.log('Error', err);
+    })
+});
 
 // remove critter from inventory
 router.delete('/:idx', (req,res) => {
     db.belongTos.findOne({
         where: {
-            critterId: req.params.idx,
-            userId: req.user.id
+            userId: req.user.id,
+            critterId: req.params.idx
         }
     })
     .then(async critter => {
