@@ -7,11 +7,14 @@
     <% critters.forEach(critter => { %>
         <% belongTos.forEach(belongto => { %>
             <% if (belongto.critterId === critter.id) { %>
+                <!-- <img src="" alt=""> -->
                 <h5> <%= critter.name.replace(/_/g, " ").toUpperCase() %> </h5>
                 <h5> <%= belongto.nickname %> </h5>
-                <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">eject</i></a>
-                <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">edit</i></a>
-                <button type="submit" name="trash">Remove from inventory</button>
+                <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">eject</i></a> -->
+                <form method="POST" action="/<%= belongto %>/?_method=DELETE">
+                    <input type="submit" value="Remove">
+                </form>
+                <!-- <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">edit</i></a> -->
                 </br>
                 </br>
             <% } %>

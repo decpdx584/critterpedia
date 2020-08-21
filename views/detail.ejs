@@ -1,35 +1,33 @@
 <h2>Search Results:</h2>
 
-    <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="<%= results.image_uri %>">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %></span>
-          <form method="POST" action="/inventory">
-            <input type="hidden" class="addCritter" name="id" value="<%= critter1.id%>">
-            <a type="submit" class="waves-effect waves-light btn"><i class="material-icons right" id="add">check_circle</i>Add to Inventory</a>
-        </form>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %><i class="material-icons right">close</i></span>
-          <% if (critter1.type == 'sea') { %>
-            <h5>Habitat: Shallow sea</h5>
-          <% } else { %>
-            <h5>Habitat: <%= results.availability.location %></h5>
-          <% }; %>
-          <% if (critter1.type == 'sea') { %>
-            <h5>Shadow size: <%= results.shadow %></h5>
-            <h5>Speed: <%= results.speed %></h5>
-          <% } else { %>
-            <h5>Rarity: <%= results.availability.rarity %></h5>
-          <% }; %>
-          <h5>The Nooks will pay you <%= results.price%> bells for one</h5>
-          <h5>When you caught it you said,<br>"<%= results['catch-phrase'] %>"</h5>
-          <h5>When you donate it to the museum, Blathers says:<br>"<%= results['museum-phrase'] %>"</h5>
-        </div>
-      </div>
-      <p>click picture for more info</p>
-
-
-    
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="<%= results.image_uri %>">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %></span>
+      <form method="POST" action="/inventory">
+        <!-- <input type="hidden" class="grabIcon" name="icon" value="<%# results.icon_uri%>"> -->
+        <input type="hidden" class="addCritter" name="id" value="<%= critter1.id%>">
+        <button><a type="submit" class="waves-effect waves-light btn"><i class="material-icons right" id="add">check_circle</i>Add to Inventory</a></button>
+    </form>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %><i class="material-icons right">close</i></span>
+      <% if (critter1.type == 'sea') { %>
+        <h5>Habitat: Shallow sea</h5>
+      <% } else { %>
+        <h5>Habitat: <%= results.availability.location %></h5>
+      <% }; %>
+      <% if (critter1.type == 'sea') { %>
+        <h5>Shadow size: <%= results.shadow %></h5>
+        <h5>Speed: <%= results.speed %></h5>
+      <% } else { %>
+        <h5>Rarity: <%= results.availability.rarity %></h5>
+      <% }; %>
+      <h5>Price: <%= results.price%> bells</h5>
+      <h5>When you caught it you said,<br>"<%= results['catch-phrase'] %>"</h5>
+      <h5>When you donate it to the museum, Blathers says:<br>"<%= results['museum-phrase'] %>"</h5>
+    </div>
+  </div>
+  <p>click picture for more info</p>

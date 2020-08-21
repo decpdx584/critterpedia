@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     console.log('Error', error);
     })
     res.redirect('inventory')
-  });
+});
 
 // render user's inventory
 router.get('/', (req, res) => {
@@ -46,6 +46,19 @@ router.get('/', (req, res) => {
 });
 
 // add nickname to inventory critter
+
+// remove critter from inventory
+router.delete('/:idx', (req,res) => {
+    db.belongTos.findOne({
+        where: {
+            critterId: req.body.idx
+        }
+    })
+    .then(critter => {
+        console.log('🐸', critter)
+    })
+})
+
 
 
 module.exports = router;

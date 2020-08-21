@@ -8,6 +8,8 @@ const passport = require('./config/ppConfig')
 const flash = require('connect-flash');
 const db = require('./models')
 const axios = require('axios');
+const methodOverride = require('method-override');
+
 // require authorization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn');
 
@@ -26,6 +28,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+// Initialize method override
+app.use(methodOverride('_method'));
 
 // Initialize passport and run session as middleware
 app.use(passport.initialize());
