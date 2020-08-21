@@ -8,11 +8,11 @@
         <% belongTos.forEach(belongto => { %>
             <% if (belongto.critterId === critter.id) { %>
                 <!-- <img src="" alt=""> -->
-                <h5> <%= critter.name.replace(/_/g, " ").toUpperCase() %> </h5>
+                <a href="detail?q=<%= critter.name %>"><h5> <%= critter.name.replace(/_/g, " ").toUpperCase() %> </h5></a>
                 <h5> <%= belongto.nickname %> </h5>
                 <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">eject</i></a> -->
-                <form method="POST" action="/<%= belongto %>/?_method=DELETE">
-                    <input type="submit" value="Remove">
+                <form method="POST" action="/inventory/<%= critter.id %>?_method=DELETE">
+                    <button type="submit">Remove</button>
                 </form>
                 <!-- <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">edit</i></a> -->
                 </br>

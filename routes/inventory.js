@@ -7,16 +7,18 @@ const axios = require('axios');
 router.post('/', (req, res) => {
     // console.log('🧩You hit the button!', req.body)
     // console.log(req.user)
-    db.belongTos.create({
+    db.belongTos.findOrCreate({
+        where: {
         userId: req.user.dataValues.id,
         critterId: req.body.id
+        }
     }).then((response) => {
         console.log('🏵', response)
+        res.redirect('inventory')
     })
     .catch(error => {
     console.log('Error', error);
     })
-    res.redirect('inventory')
 });
 
 // render user's inventory
@@ -51,14 +53,18 @@ router.get('/', (req, res) => {
 router.delete('/:idx', (req,res) => {
     db.belongTos.findOne({
         where: {
-            critterId: req.body.idx
+            critterId: req.params.idx,
+            userId: req.user.id
         }
     })
-    .then(critter => {
-        console.log('🐸', critter)
+    .then(async critter => {
+        await critter.destroy();
+        res.redirect('/inventory')
+    })
+    .catch(err => {
+        console.log('Error', err);
     })
 })
-
 
 
 module.exports = router;
