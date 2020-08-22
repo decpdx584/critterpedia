@@ -82,7 +82,6 @@ router.delete('/:idx', (req,res) => {
     .catch(err => {
         console.log('Error', err);
     })
-})
-
+});
 
 module.exports = router;
