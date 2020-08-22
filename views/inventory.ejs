@@ -16,10 +16,18 @@
                 <form method="POST" action="/inventory/<%= critter.id %>?_method=DELETE">
                     <button type="submit">Remove</button>
                 </form>
+                <% if (belongto.nickname) { %>
                 <form method="POST" action="/inventory/<%= critter.id %>?_method=PUT">
-                    <input type="text" placeholder="Add nickname" name="nickname" id="nickname">
-                    <button type="submit">Give nickname</button>
+                    <input type="text" placeholder="New nickname" name="nickname" id="nickname">
+                    <button type="submit">Change nickname</button>
                 </form>
+                <% } else { %>
+                    <form method="POST" action="/inventory/<%= critter.id %>?_method=PUT">
+                        <input type="text" placeholder="Add nickname" name="nickname" id="nickname">
+                        <button type="submit">Give nickname</button>
+                    </form>
+                <% } %>
+                
                 <!-- <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">edit</i></a> -->
                 </br>
                 </br>
