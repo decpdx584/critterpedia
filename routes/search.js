@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 
 // render all fish from dropdown
 // router.get('/', (req,res) => {
-//   let fish = req.query.fish;
+//   let fish = req.body.fish;
 //   db.critter.findAll({
 //       where: { type: fish }
 //     })
