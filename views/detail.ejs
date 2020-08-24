@@ -1,6 +1,7 @@
 <h2>Search Results:</h2>
 
-<div class="card">
+<div class="container">
+  <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="<%= results.image_uri %>">
     </div>
@@ -15,19 +16,20 @@
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><%= results['file-name'].replace(/_/g, " ").toUpperCase() %><i class="material-icons right">close</i></span>
       <% if (critter1.type == 'sea') { %>
-        <h5>Habitat: Shallow sea</h5>
+        <h5><span class="flow-text">Habitat: Shallow sea</span></h5>
       <% } else { %>
-        <h5>Habitat: <%= results.availability.location %></h5>
+        <h5><span class="flow-text">Habitat: <%= results.availability.location %></span></h5>
       <% }; %>
       <% if (critter1.type == 'sea') { %>
-        <h5>Shadow size: <%= results.shadow %></h5>
-        <h5>Speed: <%= results.speed %></h5>
+        <h5><span class="flow-text">Shadow size: <%= results.shadow %></span></h5>
+        <h5><span class="flow-text">Speed: <%= results.speed %></span></h5>
       <% } else { %>
-        <h5>Rarity: <%= results.availability.rarity %></h5>
+        <h5><span class="flow-text">Rarity: <%= results.availability.rarity %></span></h5>
       <% }; %>
-      <h5>Sale price: <%= results.price%> bells</h5>
-      <h5>When you caught it you said,<br>"<%= results['catch-phrase'] %>"</h5>
-      <h5>When you donate it to the museum, Blathers says:<br>"<%= results['museum-phrase'] %>"</h5>
+      <h5><span class="flow-text">Sale price: <%= results.price%> bells</span></h5>
+      <h5><span class="flow-text">When you caught it you said,<br>"<%= results['catch-phrase'] %>"</span></h5>
+      <h5><span class="flow-text">When you donate it to the museum, Blathers says:<br>"<%= results['museum-phrase'] %>"</span></h5>
     </div>
   </div>
   <p>click picture for more info</p>
+</div>

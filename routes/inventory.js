@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
         }
     }).then((response) => {
         // console.log('🏵', response)
-        res.redirect('inventory')
+        res.redirect('inventory');
     })
     .catch(error => {
     console.log('Error', error);
@@ -54,7 +54,6 @@ router.put('/:id', (req, res) => {
             userId: req.user.id,
             critterId: req.params.id
         },
-        // include: {req.body.dub}
     })
     .then(crit => {
         crit.nickname= req.body.nickname;
@@ -77,7 +76,7 @@ router.delete('/:idx', (req,res) => {
     })
     .then(async critter => {
         await critter.destroy();
-        res.redirect('/inventory')
+        res.redirect('/inventory');
     })
     .catch(err => {
         console.log('Error', err);

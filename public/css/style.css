@@ -1,5 +1,33 @@
+body {
+  background-color: #3f51b5;
+}
+
 h1 {
-  color: olivedrab;
+  color: #1de9b6;
+  text-align: center;
+}
+
+h2 {
+  color: #ffb300;
+  text-align: center;
+}
+
+h3 {
+  color: #e65100;
+  text-align: center;
+}
+
+h4 {
+  color: #ff3d00;
+  text-align: center;
+}
+
+h5 {
+  color: #dd2c00;
+}
+
+.brand-logo {
+  right: 50%;
 }
 
 main {
@@ -7,11 +35,7 @@ main {
 }
 
 .card {
+  align-items: center;
   width: 50%;
   height: 50%
 }
-
-/* button {
-  border: none;
-  background-color: rgba(0,0,0,0);
-} */
