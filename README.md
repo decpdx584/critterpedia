@@ -1,6 +1,6 @@
 # Cabassa's Project 2: ACNH Critterpedia
 
-My [critterpedia](decritterpedia.herokuapp.com), hosted on Heroku.
+My [critterpedia](https://decritterpedia.herokuapp.com), hosted on Heroku.
 
 ## Planning
 As part of our classwork on the Friday before project week we were instructed to begin planning out our project. I spent some time with one of my cohort's IAs (Adam) discussing my project idea and limited ERD and wireframes. I decided that this would be my planning checklist (for my first sprint over the following weekend):
