@@ -26,6 +26,10 @@ h5 {
   color: #dd2c00;
 }
 
+.critterLink {
+  color: #c6ff00;
+}
+
 .nav-wrapper {
   overflow: hidden;
   position: relative;

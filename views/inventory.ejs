@@ -9,7 +9,7 @@
             <% belongTos.forEach(belongto => { %>
                 <% if (belongto.critterId === critter.id) { %>
                     <!-- <img src="" alt=""> -->
-                    <a href="/search?q=<%= critter.name %>"><h5> <%= critter.name.replace(/_/g, " ").toUpperCase() %> </h5></a>
+                    <a href="/search?q=<%= critter.name %>"><h5><span class="critterLink"> <%= critter.name.replace(/_/g, " ").toUpperCase() %> </span></h5></a>
                     <% if (belongto.nickname) { %>
                     <h5> who goes by "<%= belongto.nickname %>" </h5>
                     <% } %>
