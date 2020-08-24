@@ -58,8 +58,9 @@ app.use('/search', require('./routes/search'));
 // app.use('/se', require('./routes/seed'));
 app.use('/inventory', isLoggedIn, require('./routes/inventory'));
 
-
-
+app.get('*', (req, res) => {
+  res.render('error')
+})
 
 
 const port = process.env.PORT || 3000;

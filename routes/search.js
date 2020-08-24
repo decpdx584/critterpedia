@@ -18,11 +18,11 @@ router.get('/', (req, res) => {
         res.render('detail', { results, critter1 });
       })
       .catch(err => {
-        console.log('Error', err);
+        res.render('error', err);
       })
     })
     .catch(err => {
-      console.log('Error', err);
+      res.render('error', err);
     })
 });
 
