@@ -26,8 +26,8 @@ router.get('/', (req, res) => {
     })
 });
 
-// render all fish from dropdown
-// router.get('/', (req,res) => {
+// render all <category> from button
+// router.get('/category', (req,res) => {
 //   let fish = req.body.fish;
 //   db.critter.findAll({
 //       where: { type: fish }
@@ -35,8 +35,8 @@ router.get('/', (req, res) => {
 //     .then(fishies => {
 //       axios.get('https://acnhapi.com/v1a/fish')
 //       .then((response) => {
-//         let catch = response.data;
-//         res.render('category', { catch, fishies });
+//         let fishData = response.data;
+//         res.render('category', { fishData, fishies });
 //       })
 //       .catch(err => {
 //         console.log('Error', err);
