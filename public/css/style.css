@@ -26,8 +26,17 @@ h5 {
   color: #dd2c00;
 }
 
+.nav-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .brand-logo {
-  right: 50%;
+  right: 45%;
+  height: 100%;
+  width: 10%;
+  position: absolute;
 }
 
 main {
